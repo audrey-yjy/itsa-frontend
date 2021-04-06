@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -39,6 +39,7 @@
     "react-dom": "17.0.1",
     "react-html-parser": "^2.0.2",
     "react-icons": "^4.2.0",
+    "react-imgix": "^9.0.3",
     "react-login-modal": "^1.2.1",
     "react-native-elements": "^3.3.2",
     "react-select": "^4.2.1",
