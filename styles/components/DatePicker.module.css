@@ -1,0 +1,19 @@
+.DatePicker {
+    width: 315px;
+    border: 1px solid #d3d3d3;
+    border-radius: 2.5px;
+    height: 30px;
+    padding-bottom: 10px;
+    padding: 8px;
+    text-align: left;
+    width: 100%;
+    font-size: 14.4px;
+    background-color: #fff;
+    color: #282828;
+    box-shadow: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #f5f4f1;
+}
+

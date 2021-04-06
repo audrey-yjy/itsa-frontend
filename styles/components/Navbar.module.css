@@ -1,0 +1,146 @@
+.tmTopBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    transition: all 0.2s ease-in-out;
+    height: 81px;
+    background: white;
+}
+
+.tmTopBar.active {
+    height: 79px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 991px) {
+    .tmTopBar, .tmTopBar.active { height: 65px ; }
+}
+
+@media (min-width: 768px) {
+    .container { max-width: 720px;  max-height: 75px };
+    .row {max-width: 540px; max-height: 75px };
+}
+
+@media (min-width: 576px) {
+    .container {max-width: 540px; max-height: 65px };
+    .row {max-width: 540px; max-height: 65px };
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.navbar {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
+
+.ascendaImg {
+    vertical-align: middle;
+    border-style: none;
+    height: 65px;
+    width: 60px;
+}
+
+.navBarBrand {
+    font-size: 4.2rem;
+    font-weight: 700;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.navBarToggler {  
+    -webkit-appearance: button;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+}
+
+.mainNav {
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 991px) {
+    .mainNav {
+        width: 180px;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        -webkit-box-shadow: 0px 0px 7px 0px rgba(214,214,214,1);
+        -moz-box-shadow: 0px 0px 7px 0px rgba(214,214,214,1);
+        box-shadow: 0px 0px 7px 0px rgba(214,214,214,1);
+    }
+}
+
+
+.navItem {
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0;
+    transition: all 0.5s ease;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-left: 0.5px solid #ccc;
+}
+
+.navLogin {
+    padding-left: -5px;
+    padding-right: -5px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0;
+    transition: all 0.5s ease;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-left: 0.5px solid #ccc;
+}
+
+.navItem:hover {
+    color: lightskyblue;
+    
+}
+
