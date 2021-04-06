@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
+import Imgix from "react-imgix";
 import Layout from '../components/layout';
 import utilStyles from '../styles/utils.module.css'
 import React, { useEffect, useState } from 'react';
@@ -173,7 +174,8 @@ const Results = ({ hotelsData, priceData, searchQuery }) => {
                     style={{width: "100%", borderWidth: 0, borderBottomWidth: 3, borderColor: "#AAAAAA"}}
                   >
                     <Card.Grid hoverable={false} style={{width: "25%", height: "180px", textAlign: "center"}}>
-                      <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} />
+                      <Imgix src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} />;
+                      {/* <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} /> */}
                     </Card.Grid>
                     <Card.Grid hoverable={false} style={{width: "50%", height: "180px", textAlign: "left"}}>
                       <h3 style={{fontSize: "20px"}}>{item.name}</h3>

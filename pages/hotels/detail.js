@@ -193,7 +193,8 @@ const Detail = ({ roomData, searchQuery }) => {
           <Row justify="space-between">
             <Col span={12}>
               <div style={{height: "100%", width: "100%"}}>
-                <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" layout={"fill"} />
+                <Imgix src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} />;
+                {/* <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" layout={"fill"} /> */}
               </div>
             </Col>
 
@@ -267,9 +268,11 @@ const Detail = ({ roomData, searchQuery }) => {
                 <Col span={6}>
                   <div style={{margin: "20px", borderRight: "1px solid #E1E1E1"}}>
                     {roomTypeImage != null ? (
-                      <Image src={roomTypeImage} width={200} height={140} objectFit={"cover"}/>
+                      <Imgix src={roomTypeImage} width={200} height={140} />
+                      // <Image src={roomTypeImage} width={200} height={140} objectFit={"cover"}/>
                     ) : (
-                      <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} />
+                      <Imgix src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} />
+                      // <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} />
                     )}
                     <p style={{marginTop: "10px"}}>View More</p>
                   </div>
