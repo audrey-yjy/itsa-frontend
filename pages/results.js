@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import Layout from '../components/layout';
 import utilStyles from '../styles/utils.module.css'
 import React, { useEffect, useState } from 'react';
-import { Card, Row, Col, List, Rate, Space, Button, Form, Input, Slider, Checkbox } from 'antd';
+import { Card, Row, Col, List, Rate, Space, Button, Input, Slider, Checkbox } from 'antd';
 
 
 const Results = ({ hotelsData, priceData, searchQuery }) => {
-  const router = useRouter();
   const [results, setResults] = useState();
 
   // For each hotel, map its lowest_price

@@ -1,7 +1,5 @@
 import styles from "../../styles/components/Foot.module.css"
 import { Row, Col } from "antd";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return(

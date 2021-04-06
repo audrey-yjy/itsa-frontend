@@ -1,15 +1,12 @@
 import React from "react"
 import { useRouter } from 'next/router';
 import { useCallback, useRef, useState } from "react"
-import NavBar from "./components/navbar"
 import Date_Picker from "./components/DatePicker"
 import SelectList from "./components/Select"
 import Footer from "./components/Footer"
 import Layout from '../components/layout';
 import styles from "../styles/components/HomePage.module.css"
-import Image from "next/image"
-import {Row,Col} from "react-bootstrap"
-import { Form, Input, Button, Select } from 'antd'
+import { Row, Col, Button } from 'antd'
 import "react-datepicker/dist/react-datepicker.css"
 
 
@@ -124,7 +121,6 @@ export default function Home() {
   return (
     <Layout>
       <div style={{width: "100%", backgroundColor: "transparent"}}>
-        {/* <NavBar/> */}
           <div className={styles.ascenda}>
             <div className = {styles.maxSize}>
               <h2 className={styles.mainBigText}>
@@ -142,8 +138,8 @@ export default function Home() {
                   </div>
                 </div>
                 <form name="mainSearch" className={styles.mainSearch} >
-                  <Row>
-                    <Col xs="12">
+                  <Row style={{width: "100%"}}>
+                    <Col span={24}>
                       <label className={styles.Headers}>Destination</label>
                       <input
                         placeholder="Destination" 
@@ -167,51 +163,51 @@ export default function Home() {
                     </Col>
                   </Row>  
 
-                  <Row>
-                    <Col xs="6">
+                  <Row style={{width: "100%"}} gutter={16}>
+                    <Col span={12}>
                       <label className={styles.Headers}>Check In</label>
                       <Date_Picker onChange={onChange4} className={styles.datePicker}/>
                     </Col>
-                    <Col xs="6">
+                    <Col span={12}>
                       <label className={styles.Headers}>Check Out</label>
                       <Date_Picker onChange={onChange5} onChangeclassName={styles.datePicker}/>
                     </Col>
                   </Row>
-                  <Row>
-                    <Col xs="4">
-                      <label className={styles.Headers}>Rooms</label>
-                    </Col>
-                    <Col xs="4">
-                      <label className={styles.Headers}>Adults</label>
-                    </Col>
-                    <Col xs="4">
-                      <label className={styles.Headers}>Children</label>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs="4">
+
+                  <Row style={{width: "100%"}} gutter={16}>
+                    <Col span={8}>
+                      <div>
+                        <label className={styles.Headers}>Rooms</label>
                         <SelectList onChange={onChange1}/>
+                      </div>
                     </Col>
-                    <Col xs="4">
-                      <select className="browser-default custom-select" onChange={onChange2} value={adult}>
-                        <option value="0" >0 </option>
-                        <option value="1" >1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                      </select>
+                    <Col span={8}>
+                      <div>
+                        <label className={styles.Headers}>Adults</label>
+                        <select className="browser-default custom-select" onChange={onChange2} value={adult}>
+                          <option value="0" >0 </option>
+                          <option value="1" >1</option>
+                          <option value="2" >2</option>
+                          <option value="3" >3</option>
+                          <option value="4" >4</option>
+                        </select>
+                      </div>
                     </Col>
-                    <Col xs="4">
-                      <select className="browser-default custom-select" onChange={onChange3} value={children}>
-                        <option value="0" >0 </option>
-                        <option value="1" >1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                      </select>
+                    <Col span={8}>
+                      <div>
+                        <label className={styles.Headers}>Children</label>
+                        <select className="browser-default custom-select" onChange={onChange3} value={children}>
+                          <option value="0" >0 </option>
+                          <option value="1" >1</option>
+                          <option value="2" >2</option>
+                          <option value="3" >3</option>
+                          <option value="4" >4</option>
+                        </select>
+                      </div>
                     </Col>
                   </Row>
-                  <Row>
+
+                  <Row style={{width: "100%"}}>
                     <Button style={{width:"75%", margin: "0 auto", marginTop: "25px"}} type="primary" onClick={() => search()}><b>SEARCH HOTELS</b></Button>
                   </Row>
                 </form>

@@ -51,6 +51,14 @@
   color: #666;
 }
 
+.headerBlock {
+  font-size: 13px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .searchBar {
   width: 100%;
   background-color: #FFFFFF;

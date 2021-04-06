@@ -1,16 +1,13 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 import { Card } from 'antd';
 import { format } from 'date-fns';
 import { BiMoon, BiSearch, BiArrowBack, BiLock } from 'react-icons/bi';
 
 
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'ITSA Group 6'
 
 export default function Layout({ children, home, searchQuery }) {
   const router = useRouter();
@@ -25,13 +22,6 @@ export default function Layout({ children, home, searchQuery }) {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <div style={{width:"65%", height: 50, display: "flex", flexDirection: "row", justifyContent: "flex-end", position: "relative"}}>
-          <div style={{width: 80, height: 90, backgroundColor: "#E52E2E", position: "absolute", top: 0, left: 0, zIndex: 1}}>Logo</div>
-          <div style={{fontSize: 15, padding: "10px 20px"}}>{query ? query.lang : "EN_US"}</div>
-          <div style={{fontSize: 15, padding: "10px 20px"}}>{query ? query.currency : "SGD"}</div>
-          <div style={{fontSize: 15, padding: "10px 20px"}}>Login/Signup</div>
-        </div>
-
         {router.pathname.startsWith("/hotels/checkout") || router.pathname.startsWith("/hotels/confirmation")  ? (
           <div className={utilStyles.searchBar} style={{width: "100%", height: 36, backgroundColor: "#00153A"}}>
             {router.pathname.startsWith("/hotels/checkout") ? (

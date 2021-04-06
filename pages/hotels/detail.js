@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../../components/layout';
 import utilStyles from '../../styles/utils.module.css'
-import React, { useEffect, useContext, useState } from 'react';
-import { Card, Row, Col, Divider, Button, List, Rate, Carousel } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Card, Row, Col, Divider, Button, List, Rate } from 'antd';
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -126,7 +126,7 @@ const fakeHotelData = {
 }
 
 
-const HotelDetail = ({ roomData, searchQuery }) => {
+const Detail = ({ roomData, searchQuery }) => {
   const [hotel, setHotel] = useState();
   const [hotelImages, setHotelImages] = useState();
 
@@ -194,20 +194,6 @@ const HotelDetail = ({ roomData, searchQuery }) => {
             <Col span={12}>
               <div style={{height: "100%", width: "100%"}}>
                 <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" layout={"fill"} />
-
-                {/* {hotelImages && hotelImages.length > 0 ? (
-                  <>
-                  <Carousel>
-                    {hotelImages.forEach(image => ( 
-                      <div>
-                        <h3 style={{height: "100%", width: "100%"}}>{image.url}</h3>
-                        <Image width={240} height={150} src={image.url} />
-                      </div>
-                    ))}
-                  </Carousel>
-                  <div style={{backgroundColor: "transparent", position: "absolute", left: "20px", bottom: "20px"}}>{hotelImages.length}</div>
-                  </>
-                ) : null} */}
               </div>
             </Col>
 
@@ -396,4 +382,4 @@ export async function getServerSideProps(context) {
 }
 
 
-export default HotelDetail;
+export default Detail;

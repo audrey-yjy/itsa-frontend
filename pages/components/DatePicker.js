@@ -1,28 +1,6 @@
-// import { DatePicker, Space } from 'antd';
-// import { useCallback } from 'react';
-
-
-// const { RangePicker } = DatePicker;
-
-
-// export default function Date_Picker() {
-//   return (
-//       <div>
-//         <Space direction="vertical">
-//           <DatePicker/>
-
-//       </Space>
-//       </div>
-      
-
-  
-//   )
-// }
-
-
-import React, { Component } from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
-import { useCallback, useRef, useState } from "react"
+import { useCallback, useState } from "react"
 import styles from "../../styles/components/DatePicker.module.css"
  
 import "react-datepicker/dist/react-datepicker.css";
@@ -30,8 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Date_Picker() {
   const [date, setDate] = useState("")
-  const [active, setActive] = useState(false)
-  const [filteredResults, setFilteredResults] = useState([])
 
   const handleChange = useCallback((event) => {
     var month = event.getMonth() + 1
