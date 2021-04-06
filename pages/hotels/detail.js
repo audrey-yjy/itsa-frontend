@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
+import Imgix from "react-imgix";
 import Layout from '../../components/layout';
 import utilStyles from '../../styles/utils.module.css'
 import React, { useEffect, useState } from 'react';
