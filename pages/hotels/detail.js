@@ -1,6 +1,5 @@
 import Link from 'next/link';
-// import Image from 'next/image';
-import Imgix from "react-imgix";
+import Image from 'next/image';
 import Layout from '../../components/layout';
 import utilStyles from '../../styles/utils.module.css'
 import React, { useEffect, useState } from 'react';
@@ -194,8 +193,7 @@ const Detail = ({ roomData, searchQuery }) => {
           <Row justify="space-between">
             <Col span={12}>
               <div style={{height: "100%", width: "100%"}}>
-                <Imgix src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} />;
-                {/* <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" layout={"fill"} /> */}
+                <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" layout={"fill"} />
               </div>
             </Col>
 
@@ -255,6 +253,19 @@ const Detail = ({ roomData, searchQuery }) => {
 
         {/* HOTEL ROOM OPTIONS */}
         <h3>Room Options</h3>
+        {Object.keys(groupedRoomData) == 0 ? (
+          <>
+          <Card 
+            bordered={true}
+            style={{ borderColor: "#E1E1E1", marginBottom: "20px" }}
+            headStyle={{ backgroundColor: "#E1E1E1" }}
+            bodyStyle={{ textAlign: "center" }}
+          >
+            <span>No available rooms</span>
+          </Card>
+          </>
+        ): null }
+        
         {Object.entries(groupedRoomData).map(([roomType, roomsArr]) => {
           const roomTypeImage = getRoomTypeImage(roomsArr);
           return (
@@ -269,11 +280,9 @@ const Detail = ({ roomData, searchQuery }) => {
                 <Col span={6}>
                   <div style={{margin: "20px", borderRight: "1px solid #E1E1E1"}}>
                     {roomTypeImage != null ? (
-                      <Imgix src={roomTypeImage} width={200} height={140} />
-                      // <Image src={roomTypeImage} width={200} height={140} objectFit={"cover"}/>
+                      <Image src={roomTypeImage} width={200} height={140} objectFit={"cover"}/>
                     ) : (
-                      <Imgix src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} />
-                      // <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} />
+                      <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} />
                     )}
                     <p style={{marginTop: "10px"}}>View More</p>
                   </div>

@@ -92,7 +92,7 @@ export default function Home() {
       // console.log(saveCheckOut)
   })
 
-  const [adult, setAdult] = useState(0)
+  const [adult, setAdult] = useState(1)
   const onChange1 = useCallback((event) => {
       // console.log(event.target.value)
       setVal(event.target.value)
@@ -240,63 +240,3 @@ export default function Home() {
     </Layout> 
   )
 }
-
-// import Head from 'next/head'
-// import Link from 'next/link'
-// import Layout, { siteTitle } from '../components/layout'
-// import React, { useContext } from 'react';
-// import { Button } from 'antd';
-// import utilStyles from '../styles/utils.module.css'
-
-// export default function Home() {
-//   // const { dispatch } = useContext(Context);
-
-//   const search = () => {
-//     console.log("Search")
-//     // dispatch({ 
-//     //   type: "save_search", 
-//     //   payload: {
-//     //     id: "WD0M",
-//     //     checkin: "2021-05-18",
-//     //     checkout: "2021-05-19",
-//     //     lang: "en_US",
-//     //     currency: "SGD",
-//     //     country: "SG",
-//     //     guest: "2"
-//     //   } 
-//     // });
-//   }
-
- 
-//   return (
-//     <Layout home>
-//       <Head>
-//         <title>{siteTitle}</title>
-//       </Head>
-      
-//       <section className={utilStyles.headingMd}>
-//         <Link 
-//           href={{
-//             pathname: "/results",
-//             query: { 
-//               dest_id: "WD0M",
-//               checkin: "2021-05-18",
-//               checkout: "2021-05-19",
-//               lang: "en_US",
-//               currency: "SGD",
-//               country: "SG",
-//               guest: "2"
-//             } // query parameters - destination, checkin, checkout, etc. 
-//           }}
-//         >
-//           <Button type="primary" onClick={() => search()}>Search</Button>
-//         </Link>
-//         <p>
-//           (This is a sample website - you’ll be building a site like this on{' '}
-//           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-//         </p>
-//       </section>
-//     </Layout>
-//   )
-// }
-

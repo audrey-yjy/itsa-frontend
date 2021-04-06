@@ -1,6 +1,5 @@
 import Link from 'next/link';
-// import Image from 'next/image';
-import Imgix from "react-imgix";
+import Image from 'next/image';
 import Layout from '../components/layout';
 import utilStyles from '../styles/utils.module.css'
 import React, { useEffect, useState } from 'react';
@@ -10,17 +9,18 @@ import { Card, Row, Col, List, Rate, Space, Button, Input, Slider, Checkbox } fr
 const Results = ({ hotelsData, priceData, searchQuery }) => {
   const [results, setResults] = useState();
 
-  // For each hotel, map its lowest_price
-  const findLowestPrice = (hotelId) => {
-    const priceExists = priceData.some(obj => obj.id === hotelId);
-    if (priceExists) {
-      hotelsData.find(obj => obj.id === hotelId)["lowest_price"] = priceData.find(obj => obj.id === hotelId).lowest;
-    } else {
-      hotelsData.find(obj => obj.id === hotelId)["lowest_price"] = 0;
+  if (hotelsData && hotelsData.length > 0) {
+    const findLowestPrice = (hotelId) => {
+      const priceExists = priceData.some(obj => obj.id === hotelId);
+      if (priceExists) {
+        hotelsData.find(obj => obj.id === hotelId)["lowest_price"] = priceData.find(obj => obj.id === hotelId).lowest;
+      } else {
+        hotelsData.find(obj => obj.id === hotelId)["lowest_price"] = 0;
+      }
+      // console.log(hotelsData.find(obj => obj.id === hotelId));
     }
-    // console.log(hotelsData.find(obj => obj.id === hotelId));
+    hotelsData.map( (hotel) => findLowestPrice(hotel.id) );
   }
-  hotelsData.map( (hotel) => findLowestPrice(hotel.id) );
 
 
   const bookDeal = (selectedHotel) => {
@@ -161,9 +161,8 @@ const Results = ({ hotelsData, priceData, searchQuery }) => {
 
           {/* SEARCH RESULTS */}
           <Col span={18}>
-            <div>
             <List
-              bordered={false}
+              bordered={true}
               dataSource={hotelsData}
               renderItem={item => (
                 <>
@@ -174,8 +173,7 @@ const Results = ({ hotelsData, priceData, searchQuery }) => {
                     style={{width: "100%", borderWidth: 0, borderBottomWidth: 3, borderColor: "#AAAAAA"}}
                   >
                     <Card.Grid hoverable={false} style={{width: "25%", height: "180px", textAlign: "center"}}>
-                      <Imgix src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} />;
-                      {/* <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} /> */}
+                      <Image src="http://photos.hotelbeds.com/giata/bigger/36/365419/365419a_hb_ro_003.jpg" width={200} height={140} objectFit={"cover"} />
                     </Card.Grid>
                     <Card.Grid hoverable={false} style={{width: "50%", height: "180px", textAlign: "left"}}>
                       <h3 style={{fontSize: "20px"}}>{item.name}</h3>
@@ -211,7 +209,6 @@ const Results = ({ hotelsData, priceData, searchQuery }) => {
               </>
               )}
             />
-            </div>
           </Col>      
         </Row>
       </div> 
