@@ -5,9 +5,9 @@ import NProgress from 'nprogress';
 import Router from 'next/router';
 import "nprogress/nprogress.css";
 
-import { Amplify } from "aws-amplify";
-import awsExports from "../src/aws-exports";
-Amplify.configure({ ...awsExports, ssr: true });
+// import { Amplify } from "aws-amplify";
+// import awsExports from "../src/aws-exports";
+// Amplify.configure({ ...awsExports, ssr: true });
 
 
 NProgress.configure({
