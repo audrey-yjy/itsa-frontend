@@ -3,4 +3,5 @@ module.exports = {
     loader: 'imgix',
     path: 'https://itsa-frontend.imgix.net',
   },
+  distDir: 'build',
 };
