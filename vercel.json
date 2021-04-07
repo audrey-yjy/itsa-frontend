@@ -3,7 +3,7 @@
     {
       "src": "/.*",
       "headers": {
-        "Content-Security-Policy": "default-src 'self'; img-src 'self' photos.hotelbeds.com cdn-s3.kaligo.com; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'",
+        "Content-Security-Policy": "default-src 'self'; connect-src 'https://ojf2x5bl5bdr7e2czg4f6ogeua.appsync-api.ap-southeast-1.amazonaws.com' 'https://gpz7qbnpe1.execute-api.ap-southeast-1.amazonaws.com/'; img-src 'self' photos.hotelbeds.com cdn-s3.kaligo.com; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'",
         "Feature-Policy": "'none'",
         "Referrer-Policy": "same-origin",
         "X-Content-Type-Options": "nosniff",
