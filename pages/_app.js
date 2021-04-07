@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import utilStyles from '../styles/utils.module.css';
+import Image from 'next/image';
 
 import NProgress from 'nprogress';
 import Router from 'next/router';
@@ -32,7 +33,9 @@ export default function App({ Component, pageProps }) {
     <>
     <header style={{backgroundColor: "#FFFFFF"}}>
       <div style={{width:"65%", height: "20%", margin: "0 auto", display: "flex", flexDirection: "row", justifyContent: "flex-end", position: "relative"}}>
-        <div style={{width: 80, height: 90, backgroundColor: "#E52E2E", position: "absolute", top: 0, left: 0, zIndex: 1}}>Logo</div>
+        <div style={{width: 80, height: 90, backgroundColor: "#E52E2E", position: "absolute", top: 0, left: 0, zIndex: 1}}>
+          <Image src="./public/kaligo_logo.png" layout={"fill"}></Image>
+        </div>
         <span className={utilStyles.headerBlock}>EN_US</span>
         <span className={utilStyles.headerBlock}>SGD</span>
         <span className={utilStyles.headerBlock}>Login/Signup</span>
